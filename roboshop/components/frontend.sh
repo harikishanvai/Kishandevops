@@ -26,7 +26,7 @@ curl -f -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/f
 STATCHECK $?
 
 Print "Cleanup Old Nginx Content"
-rm -rf /usr/share/nginx/html/*\
+rm -rf /usr/share/nginx/html/*
 STATCHECK $?
 
 cd /usr/share/nginx/html
