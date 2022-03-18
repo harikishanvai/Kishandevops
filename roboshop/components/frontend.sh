@@ -1,5 +1,11 @@
 #!/bin/bash
 
+USER_ID=$1(id -u)
+if [ "$USER_ID" -ne 0 ]; then
+  echo You Should run your script as sudo or root user
+  exit 1
+fi
+
 echo -e"\e[32m Installing Nginx \e[0m"
 yum install nginx -y
 
@@ -18,5 +24,6 @@ mv localhost.conf /etc/nginx/default.d/roboshop.conf
 echo -e "\e[35m Starting Nginx \e[0m"
 systemctl restart nginx
 systemctl enable nginx
+
 
 
