@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USER_ID=$1(id -u)
+USER_ID=$(id -u)
 if [ "$USER_ID" -ne 0 ]; then
   echo You Should run your script as sudo or root user
   exit 1
