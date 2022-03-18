@@ -1,28 +1,25 @@
 #!/bin/bash
-
+STATCHECK() {
+if [ $1 -eq 0 ]; then
+  echo -e "\e[32mSUCCESS\e[0m"
+  else
+  echo -e "\e[31mFAILURE\e[0m"
+  exit 2
+fi
+}
 USER_ID=$(id -u)
 if [ "$USER_ID" -ne 0 ]; then
   echo You Should run your script as sudo or root user
   exit 1
 fi
 
-echo -e"\e[32m Installing Nginx \e[0m"
+echo -e "\e[32m Installing Nginx \e[0m"
 yum install nginx -y
-if [ $? -eq 0 ]; then
-  echo -e "\e[32mSUCCESS\e[0m"
-  else
-  echo -e "\e[31mFAILURE\e[0m"
-  exit 2
-fi
+STATCHECK $?
 
 echo -e "\e[36m Downloading Nginx Content \e[0m"
 curl -f -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
-if [ $? -eq 0 ]; then
-  echo -e "\e[32mSUCCESS\e[0m"
-  else
-  echo -e "\e[31mFAILURE\e[0m"
-  exit 2
-fi
+STATCHECK $?
 
 echo -e "\e[36m Cleanup Old Nginx Content and Extract New downloaded Archive \e[0m"
 rm -rf /usr/share/nginx/html/*
@@ -35,12 +32,7 @@ mv localhost.conf /etc/nginx/default.d/roboshop.conf
 
 echo -e "\e[36m Starting Nginx \e[0m"
 systemctl restart nginx
-if [ $? -eq 0 ]; then
-  echo -e "\e[32mSUCCESS\e[0m"
-  else
-  echo -e "\e[31mFAILURE\e[0m"
-  exit 2
-fi
+STSTCHECK $?
 
 systemctl enable nginx
 
