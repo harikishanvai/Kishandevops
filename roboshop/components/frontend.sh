@@ -15,3 +15,4 @@ mv localhost.conf /etc/nginx/default.d/roboshop.conf
 systemctl restart nginx
 systemctl enable nginx
 
+
