@@ -18,7 +18,7 @@ yum install nginx -y
 STATCHECK $?
 
 echo -e "\e[36m Downloading Nginx Content \e[0m"
-curl -f -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/mian.zip"
+curl -f -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
 STATCHECK $?
 
 echo -e "\e[36m Cleanup Old Nginx Content and Extract New downloaded Archive \e[0m"
