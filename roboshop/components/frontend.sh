@@ -7,7 +7,9 @@ if [ $1 -eq 0 ]; then
   exit 2
 fi
 }
+
 Print() {
+  echo -e "\e----------$1----------" >>$LOG_FILE
   echo -e "\e[35m $1 \e[0m"
 }
 
@@ -16,7 +18,7 @@ if [ "$USER_ID" -ne 0 ]; then
   echo You Should run your script as sudo or root user
   exit 1
 fi
-LOG_FILE=/tmp/roboshop.sh
+LOG_FILE=/tmp/roboshop.log
 rm -f $LOG_FILE
 
 Print "Installing Nginx "
