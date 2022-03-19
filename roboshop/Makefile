@@ -5,4 +5,4 @@ cart:
 	bash components/cart.sh
 
 mongodb:
-	bash components/cart.sh
+	bash components/mongodb.sh
