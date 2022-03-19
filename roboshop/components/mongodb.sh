@@ -30,7 +30,7 @@ yum install -y mongodb-org &>>$LOG_FILE
 STATCHECK $?
 
 Print "Start MondoDB"
-systemctl enable mongod &>>$LOG_FILE && systemctl start mongod &>>$LOG_FILE
+systemctl enable mongod &>>$LOG_FILE && systemctl restart mongod &>>$LOG_FILE
 STATCHECK $?
 
 
