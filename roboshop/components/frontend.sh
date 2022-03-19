@@ -9,7 +9,7 @@ fi
 }
 
 Print() {
-  echo -e "\e----------$1----------" >>$LOG_FILE
+  echo -e "\n----------$1----------" >>$LOG_FILE
   echo -e "\e[35m $1 \e[0m"
 }
 
