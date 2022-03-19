@@ -29,8 +29,8 @@ Print "Install MongoDB"
 yum install -y mongodb-org &>>$LOG_FILE
 STATCHECK $?
 
-print "Update MongoDB Listen Address"
-sed -i -e 's/127.0.0.1/0.0.0.0/ etc/mongod.conf'
+Print "Update MongoDB Listen Address"
+sed -i -e 's/127.0.0.1/0.0.0.0/' etc/mongod.conf
 STATCHECK $?
 
 Print "Start MondoDB"
