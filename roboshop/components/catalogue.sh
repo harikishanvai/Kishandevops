@@ -36,7 +36,7 @@ Print "Fix App User Persmissions"
 chown -R ${APP_USER}:${APP_USER} /home/${APP_USER}
 STATCHECK $?
 
-Print"setup systemd file"
+Print "setup systemd file"
 sed -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/roboshop/catalogue/systemd.service &>>${LOG_FILE} mv /etc/systemd/system/catalogue.service &>>${LOG_FILE}
 STATCHECK $?
 
