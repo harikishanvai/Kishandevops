@@ -37,10 +37,10 @@ chown -R ${APP_USER}:${APP_USER} /home/${APP_USER}
 STATCHECK $?
 
 Print "setup systemd file"
-sed -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/roboshop/catalogue/systemd.service &>>${LOG_FILE} mv /home/roboshop/catalogue/systemd.service &>>${LOG_FILE} /etc/systemd/system/catalogue.service &>>${LOG_FILE}
+sed -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/roboshop/catalogue/systemd.service &>>${LOG_FILE} && mv /home/roboshop/catalogue/systemd.service &>>${LOG_FILE} && /etc/systemd/system/catalogue.service &>>${LOG_FILE}
 STATCHECK $?
 
-Print "Start Catlogue Service"
+Print "restart Catlogue Service"
 systemctl daemon-reload &>>${LOG_FILE} && systemctl start catalogue &>>${LOG_FILE} && systemctl enable catalogue &>>${LOG_FILE}
 STATCHECK $?
 
