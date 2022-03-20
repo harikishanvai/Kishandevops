@@ -9,3 +9,9 @@ mongodb:
 
 catalogue:
 	bash components/catalogue.sh
+
+redis:
+	bash components/redis.sh
+
+user:
+	bash components/user.sh
