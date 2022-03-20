@@ -44,3 +44,4 @@ STATCHECK $?
 Print "restart Catalogue Service"
 systemctl daemon-reload &>>${LOG_FILE} && systemctl restart catalogue &>>${LOG_FILE} && systemctl enable catalogue &>>${LOG_FILE}
 STATCHECK $?
+
