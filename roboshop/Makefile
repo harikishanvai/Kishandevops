@@ -7,5 +7,5 @@ cart:
 mongodb:
 	bash components/mongodb.sh
 
-catalouge:
+catalogue:
 	bash components/catalogue.sh
