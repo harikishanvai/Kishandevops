@@ -6,7 +6,7 @@ Print "Configure YUM repos"
 curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash - &>>${LOG_FILE}
 STATCHECK $?
 
-Print"Install Nodejs"
+Print "Install Nodejs"
 yum install nodejs gcc-c++ -y &>>${LOG_FILE}
 
 
@@ -18,7 +18,7 @@ Print "Download App content"
 curl -f -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip" &>>${LOG_FILE}
 STATCHECK $?
 
-Print "Cleanuo old content"
+Print "Cleanup old content"
 rm -rf /home/roboshop/catalouge &>>${LOG_FILE}
 STATCHECK $?
 
