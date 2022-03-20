@@ -13,8 +13,8 @@ id ${APP_USER} &>>${LOG_FILE}
 if [ $? -ne 0 ]; then
   Print "Add Application user"
   useradd ${APP_USER} &>>${LOG_FILE}
-fi
 STATCHECK $?
+fi
 
 Print "Download App content"
 curl -f -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip" &>>${LOG_FILE}
