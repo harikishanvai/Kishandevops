@@ -18,4 +18,14 @@ Print "Start MondoDB"
 systemctl enable mongod &>>$LOG_FILE && systemctl restart mongod &>>$LOG_FILE
 STATCHECK $?
 
+Print "Download schema"
+curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip" &>>$LOG_FILE
+STATCHECK $?
 
+Print "Extract schema"
+cd /tmp && unzip mongodb.zip &>>$LOG_FILE
+STATCHECK $?
+
+Print "Load schema"
+cd mongodb-main && mongo < catalogue.js &>>$LOG_FILE && mongo < users.js &>>$LOG_FILE
+STATCHECK $?
