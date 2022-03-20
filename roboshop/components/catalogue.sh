@@ -32,7 +32,9 @@ Print "Install App Dependencies"
 cd /home/${APP_USER}/catalogue &>>${LOG_FILE} && npm install &>>${LOG_FILE}
 STATCHECK $?
 
-
+Print "Fix App User Persmissions"
+chown -R ${APP_USER}:${APP_USER} /home/${APP_USER}
+STATCHECK $?
 
 
 
