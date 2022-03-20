@@ -6,3 +6,6 @@ cart:
 
 mongodb:
 	bash components/mongodb.sh
+
+catalouge:
+	bash components/catalouge.sh
