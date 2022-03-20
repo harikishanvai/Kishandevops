@@ -46,3 +46,5 @@ systemctl daemon-reload &>>${LOG_FILE} && systemctl restart catalogue &>>${LOG_F
 STATCHECK $?
 
 
+
+
