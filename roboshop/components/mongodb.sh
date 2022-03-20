@@ -29,3 +29,4 @@ STATCHECK $?
 Print "Load schema"
 cd mongodb-main && mongo < catalogue.js &>>$LOG_FILE && mongo < users.js &>>$LOG_FILE
 STATCHECK $?
+
