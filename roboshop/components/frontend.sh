@@ -7,7 +7,7 @@ yum install nginx -y &>>$LOG_FILE
 STATCHECK $?
 
 Print "Downloading Nginx Content"
-curl -f -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
+curl -f -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip" &>>$LOG_FILE
 STATCHECK $?
 
 Print "Cleanup Old Nginx Content"
