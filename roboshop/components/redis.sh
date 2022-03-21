@@ -22,3 +22,4 @@ STATCHECK $?
 Print "Start Redis Service"
 systemctl enable redis &>>${LOG_FILE} && systemctl start redis &>>${LOG_FILE}
 STATCHECK $?
+
