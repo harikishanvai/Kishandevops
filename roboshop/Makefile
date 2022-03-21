@@ -18,3 +18,4 @@ user:
 
 mysql:
 	bash components/mysql.sh
+
