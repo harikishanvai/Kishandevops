@@ -22,7 +22,7 @@ STATCHECK $?
 
 Print "Update Roboshop Configuration"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf &>>$LOG_FILE
-sed -e '/catalogue/s/localhost/catalogue.roboshop.internal/' /etc/nginx/default.d/roboshop.conf
+sed -i -e '/catalogue/s/localhost/catalogue.roboshop.internal/' /etc/nginx/default.d/roboshop.conf
 STATCHECK $?
 
 Print "Starting Nginx"
