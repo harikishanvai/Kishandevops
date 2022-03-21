@@ -7,7 +7,7 @@ curl -L https://raw.githubusercontent.com/roboshop-devops-project/redis/main/red
 STATCHECK $?
 
 Print "Install Redis"
-# yum install redis -y &>>${LOG_FILE}
+yum install redis -y &>>${LOG_FILE}
 STATCHECK $?
 
 Print "Update Redis config"
