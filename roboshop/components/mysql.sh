@@ -10,6 +10,7 @@ Print "Install MySQL"
 yum install mysql-community-server -y &>>${LOG_FILE}
 STATCHECK $?
 
+
 #1. Start MySQL.
 #
 #```bash
