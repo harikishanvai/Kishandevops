@@ -19,7 +19,7 @@ if [ $? -ne 0 ]; then
   STATCHECK $?
 fi
 
-echo show plugins | mysql -uroot -pRoboShop@1 2>>${LOG_FILE}| grep validate_password
+echo show plugins | mysql -uroot -pRoboShop@1 2>>${LOG_FILE} | grep validate_password
 f [ $? -eq 0 ]; then
   echo "Unistall Password Validate Plugin"
   echo 'unistall plugin validate_password;' >/tmp/pass-validate.sql
