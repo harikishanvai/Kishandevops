@@ -19,26 +19,16 @@ if [ $? -ne 0 ]; then
   STATCHECK $?
 fi
 
-
-#1. Start MySQL.
-#
-#```bash
-## systemctl enable mysqld
-## systemctl start mysqld
-#```
-#
-#1. Now a default root password will be generated and given in the log file.
-#
-#```bash
-## grep temp /var/log/mysqld.log
-#```
-#
-#1. Next, We need to change the default root password in order to start using the database service. Use password `RoboShop@1` or any other as per your choice. Rest of the options you can choose `No`
-#
-#```bash
+echo show plugins | mysql -uroot -pRoboShop@1 2>>${LOG_FILE}| grep validate_password
+f [ $? -eq 0 ]; then
+  echo "Unistall Password Validate Plugin"
+  echo 'unistall plugin validate_password;' >/tmp/pass-validate.sql
+  mysql  --connect-expired-password -uroot -pRoboShop@1 </tmp/pass-validate.sql &>>${LOG_FILE}
+  STATCHECK $?
+fi
 ## mysql_secure_installation
-#```
-#
+
+
 #1. You can check the new password working or not using the following command in MySQL
 #
 #First lets connect to MySQL
