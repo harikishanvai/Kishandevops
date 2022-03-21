@@ -12,7 +12,7 @@ STATCHECK $?
 
 echo "SET PASSWORD FOR 'root'@'localhost' = PASSWORD('RoboShop@1');" >/tmp/rootpass.sql
 
-DEFAULT_ROOT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk'{prnt $NF}')
+DEFAULT_ROOT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}')
 mysql -uroot -p"${DEFAULT_ROOT_PASSWORD}" </tmp/rootpass.sql
 
 
